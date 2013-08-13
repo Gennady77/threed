@@ -3,8 +3,35 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            dojoConfig = {
+                baseUrl: '/threed',
+                parseOnLoad: false,
+                async: true,
+                casheBust: true,
+                packages: [{
+                    name: 'dojo',
+                    location: 'js/lib/dojo/dojo'
+                }, {
+                    name: 'dijit',
+                    location: 'js/lib/dojo/dijit'
+                }, {
+                    name: 'dojox',
+                    location: 'js/lib/dojo/dojox'
+                }, {
+                    name: 'me',
+                    location: 'js/me'
+                }]
+            };
+        </script>
+        <script type="text/javascript" src="js/lib/dojo/dojo/dojo.js"></script>
+        <script type="text/javascript">
+            require(['dojo/parser', 'dijit/layout/BorderContainer', 'dojo/domReady!'], function(parser) {
+                parser.parse();
+            });
+        </script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div data-dojo-type="dijit.layout.BorderContainer"></div>
     </body>
 </html>
