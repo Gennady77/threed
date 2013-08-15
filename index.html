@@ -3,6 +3,9 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="js/lib/dojo/dijit/themes/claro/claro.css" />
+        <link rel="stylesheet" href="css/themes/claro/claro.css" />
+        <link rel="stylesheet" href="css/main.css" />
         <script type="text/javascript">
             dojoConfig = {
                 baseUrl: '/threed',
@@ -26,12 +29,22 @@
         </script>
         <script type="text/javascript" src="js/lib/dojo/dojo/dojo.js"></script>
         <script type="text/javascript">
-            require(['dojo/parser', 'dijit/layout/BorderContainer', 'dojo/domReady!'], function(parser) {
+            require([
+                'dojo/parser',
+                'dijit/layout/BorderContainer',
+                'dijit/layout/ContentPane',
+                'dojo/domReady!'
+            ], function(parser) {
                 parser.parse();
             });
         </script>
     </head>
-    <body>
-        <div data-dojo-type="dijit.layout.BorderContainer"></div>
+    <body class="claro">
+        <div class="layoutMain" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:false">
+            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="doLayout:false, region:'center', splitter:true">
+                <canvas id="canvas-3d" class="canvas3d" width="500" height="500"></canvas>
+            </div>
+            <div style="width: 300px" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="doLayout:false, region:'right', splitter:true"></div>
+        </div>
     </body>
 </html>

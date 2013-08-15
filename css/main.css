@@ -1,0 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.layoutMain {
+    height: 100%;
+}
+#canvas-3d {}
